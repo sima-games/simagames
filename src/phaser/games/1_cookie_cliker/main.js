@@ -6,10 +6,7 @@ const config = {
   width: 450,
   height: 800,
   scene: { preload, create, update },
-  parent: 'game-container',
 };
-
-const game = new Phaser.Game(config);
 
 let graphics;
 
