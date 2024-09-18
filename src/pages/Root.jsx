@@ -1,16 +1,18 @@
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import Navigation from '../components/navigation/Navigation';
 import { useEffect } from 'react';
 
 const Root = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const redirectTo = urlParams.get('?') || '/';
+    const redirectTo = urlParams.get('url') || '/';
 
     if (redirectTo && redirectTo !== window.location.pathname) {
-      redirect(redirectTo);
+      navigate(redirectTo, { replace: true });
     }
   }, []);
 
