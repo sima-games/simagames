@@ -12,11 +12,11 @@ export async function gamesLoader() {
 const Games = () => {
   const { games } = useLoaderData();
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navigation />
       <GamesList games={games} />
       <Footer />
-    </>
+    </div>
   );
 };
 

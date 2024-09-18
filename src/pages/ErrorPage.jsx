@@ -6,7 +6,7 @@ const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navigation />
       <div className="min-h-screen flex flex-col">
         <div className="flex-grow flex items-center justify-center">
@@ -20,7 +20,7 @@ const ErrorPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
