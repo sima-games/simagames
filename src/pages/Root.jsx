@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import Navigation from '../components/navigation/Navigation';
+import { useEffect } from 'react';
 
 const Root = () => {
   const navigate = useNavigate();
