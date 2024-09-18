@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import avatar from '../../assets/images/avatar.jpg';
+import logo from '../../assets/images/logo.png';
 import { useEffect, useState } from 'react';
 import NavigationContent from './NavigationContent';
 
@@ -15,13 +15,26 @@ const Navigation = () => {
   }, [top]);
 
   return (
-    <div className="drawer sticky top-0 z-50">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col  ">
-        <nav className={`navbar w-full bg-base-100 ${!top && `shadow-lg`}`}>
-          <div className="flex-none lg:hidden">
+    <div className="flex drawer drawer-end sticky top-0 z-50">
+      <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content w-full">
+        <nav className={`navbar bg-base-100 ${!top && `shadow-lg`}`}>
+          <Link to="/">
+            <div className="btn btn-ghost flex-0">
+              <div className="w-10">
+                <img
+                  src={logo}
+                  style={{
+                    backgroundSize: 'cover',
+                  }}
+                />
+              </div>
+              <span className="text-lg md:text-2xl">Sima Games</span>
+            </div>
+          </Link>
+          <div className="flex-1 md:hidden">
             <label
-              htmlFor="my-drawer-3"
+              htmlFor="navbar-drawer"
               aria-label="open sidebar"
               className="btn btn-square btn-ghost"
             >
@@ -40,23 +53,7 @@ const Navigation = () => {
               </svg>
             </label>
           </div>
-          <Link to="/" className="flex-0 gap-1 px-2 md:gap-2">
-            <div className="btn btn-ghost">
-              <div className="avatar">
-                <div className="w-10 rounded-full">
-                  <img
-                    src={avatar}
-                    style={{
-                      backgroundSize: 'cover',
-                      transform: 'scale(1.3)',
-                    }}
-                  />
-                </div>
-              </div>
-              <span className="text-lg md:text-2xl">Sima Games</span>
-            </div>
-          </Link>
-          <div className="hidden flex-none lg:block">
+          <div className="hidden md:flex md:items-center md:ml-4">
             <ul className="menu menu-horizontal">
               <NavigationContent />
             </ul>
@@ -65,11 +62,11 @@ const Navigation = () => {
       </div>
       <div className="drawer-side">
         <label
-          htmlFor="my-drawer-3"
+          htmlFor="navbar-drawer"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 min-h-full w-80 p-4">
+        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
           <NavigationContent />
         </ul>
       </div>

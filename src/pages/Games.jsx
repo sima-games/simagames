@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer';
 import GamesList from '../components/games/GamesList';
 import Navigation from '../components/navigation/Navigation';
-import { getGames } from '../services/Games';
+import { getGames } from '../services/games';
 
 export async function gamesLoader() {
   const games = getGames();
