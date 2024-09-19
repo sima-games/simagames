@@ -6,6 +6,9 @@ import Root from './pages/Root';
 import Games, { gamesLoader } from './pages/Games';
 import Game, { gameLoader } from './pages/Game';
 import ErrorPage from './pages/ErrorPage';
+import TimelinePage, {
+  dataLoader as timelineDataLoader,
+} from './pages/TimelinePage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,11 @@ const router = createBrowserRouter([
     path: '/games/:route',
     element: <Game />,
     loader: gameLoader,
+  },
+  {
+    path: '/timeline',
+    element: <TimelinePage />,
+    loader: timelineDataLoader,
   },
 ]);
 
