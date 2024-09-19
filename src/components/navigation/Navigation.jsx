@@ -8,7 +8,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const scrollHandler = () => {
-      window.scrollY > 10 ? setTop(false) : setTop(true);
+      window.scrollY > 5 ? setTop(false) : setTop(true);
     };
     window.addEventListener('scroll', scrollHandler);
     return () => window.removeEventListener('scroll', scrollHandler);

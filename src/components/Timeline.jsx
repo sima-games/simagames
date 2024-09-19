@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 const Timeline = ({ data }) => {
-  const rightSideRef = useRef(null);
+  const leftSideRef = useRef(null);
 
   useEffect(() => {
-    const element = rightSideRef.current;
+    const element = leftSideRef.current;
 
     if (!element) return;
 
@@ -61,31 +61,37 @@ const Timeline = ({ data }) => {
   }, {});
 
   return (
-    <div className="flex grow">
+    <div className="flex">
       {/* Left navigation (scrollable) */}
-      <nav className="hidden sm:block w-[256px] border-r border-gray-300">
+      <nav
+        ref={leftSideRef}
+        className="hidden w-1/4 h-screen overflow-y-auto sm:block border-r border-gray-300 sticky top-16"
+      >
         <ul>
           {Object.keys(groupedData).map((year) => (
             <li key={`year-${year}`} className="relative">
               {/* Sticky year */}
-              <div className="text-xl font-bold sticky top-16 w-full bg-white z-10 pt-4 pl-4 h-12 border-b border-gray-300 ">
+              <div className="text-xl font-bold w-full bg-base-100 z-10 pt-4 pl-4 h-12 border-b border-gray-300 sticky top-0">
                 {year}
               </div>
               <ul>
                 {Object.keys(groupedData[year]).map((month) => (
                   <li key={`month-${month}`} className="relative">
                     {/* Sticky month */}
-                    <div className="text-lg font-semibold sticky top-28 w-full bg-white border-b border-gray-300 z-5 pl-4">
+                    <div className="text-lg font-semiboldw-full bg-base-100 border-b border-gray-300 z-5 pl-4  sticky top-12">
                       {month}
                     </div>
-                    <ul className="space-y-1 pt-4 pl-8 pb-4">
+                    <ul className="space-y-1 pt-2 pl-4 pr-4 pb-4">
                       {groupedData[year][month].map((item) => (
-                        <li key={`day-${item.id}`}>
+                        <li key={`day-${item.id}`} className="flex space-x-2">
+                          <p className="font-medium">
+                            {item.day.toString().padStart(2, '0')}
+                          </p>
                           <a
                             href={`#timeline-item-${item.id}`}
-                            className="text-blue-600 hover:underline overflow-none"
+                            className="text-blue-600 hover:underline"
                           >
-                            - {item.day.toString().padStart(2, '0')}
+                            <p className="">{item.title}</p>
                           </a>
                         </li>
                       ))}
@@ -100,11 +106,7 @@ const Timeline = ({ data }) => {
 
       {/* Right timeline (scrollable) */}
 
-      <section
-        ref={rightSideRef}
-        className="md:w-7/8 h-screen w-full overflow-y-auto p-4 sticky top-16"
-        id="timelineContainer"
-      >
+      <section className="md:w-3/4 w-full p-4" id="timelineContainer">
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
           {data.map((item, i) => {
             const date = new Date(item.date + 'T00:00:00');
