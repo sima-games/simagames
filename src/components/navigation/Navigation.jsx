@@ -15,11 +15,15 @@ const Navigation = () => {
   }, [top]);
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky flex top-0 z-50 max-h-16">
       <div className="drawer drawer-end">
         <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <nav className={`navbar bg-base-100 ${!top && `shadow-lg`}`}>
+          <nav
+            className={`navbar bg-base-100 transition-shadow duration-300 ${
+              !top && `shadow-lg`
+            }`}
+          >
             <Link to="/">
               <div className="btn btn-ghost flex-0">
                 <div className="w-10">
