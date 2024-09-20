@@ -1,3 +1,5 @@
+import content from '../services/content';
+
 const Footer = () => {
   return (
     <footer
@@ -5,9 +7,15 @@ const Footer = () => {
       className="footer bg-neutral text-neutral-content items-center p-4 mt-auto"
     >
       <aside className="grid-flow-col items-center">
-        <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+        <p>© {new Date().getFullYear()} Sima Games - All right reserved</p>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <a
+          href={`mailto:${content.mail}`}
+          className="text-base hover:underline"
+        >
+          {content.mail}
+        </a>
         <a href="https://t.me/sima_games" target="__blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"

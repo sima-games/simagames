@@ -5,7 +5,40 @@ const games = [
     id: 1,
     icon: null,
     name: 'Cookie Clicker',
-    route: 'cookie-clicker',
+    slug: 'cookie-clicker',
+    url: 'https://sima-games.github.io/phaser-cookie-clicker/',
+    shortDescription:
+      'The network track can now show you critical information from the Network panel.',
+    description: '',
+    previewImage: cookieClickerPreview,
+  },
+  {
+    id: 1,
+    icon: null,
+    name: 'Cookie Clicker',
+    slug: 'cookie-clicker',
+    url: 'https://sima-games.github.io/phaser-cookie-clicker/',
+    shortDescription:
+      'The network track can now show you critical information from the Network panel.',
+    description: '',
+    previewImage: cookieClickerPreview,
+  },
+  {
+    id: 1,
+    icon: null,
+    name: 'Cookie Clicker',
+    slug: 'cookie-clicker',
+    url: 'https://sima-games.github.io/phaser-cookie-clicker/',
+    shortDescription:
+      'The network track can now show you critical information from the Network panel.',
+    description: '',
+    previewImage: cookieClickerPreview,
+  },
+  {
+    id: 1,
+    icon: null,
+    name: 'Cookie Clicker',
+    slug: 'cookie-clicker',
     url: 'https://sima-games.github.io/phaser-cookie-clicker/',
     shortDescription:
       'The network track can now show you critical information from the Network panel.',
@@ -15,7 +48,6 @@ const games = [
 ];
 
 const getGames = () => games;
-const getGameByRoute = (route) =>
-  games.filter((game) => game.route == route)[0];
+const getGameBySlug = (slug) => games.filter((game) => game.slug == slug)[0];
 
-export { getGames, getGameByRoute };
+export { getGames, getGameBySlug };

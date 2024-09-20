@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     loader: gamesLoader,
   },
   {
-    path: '/games/:route',
+    path: '/games/:slug',
     element: <Game />,
     loader: gameLoader,
   },

@@ -2,10 +2,10 @@ import { useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer';
 import GameDetails from '../components/games/GameDetails';
 import Navigation from '../components/navigation/Navigation';
-import { getGameByRoute } from '../services/games';
+import { getGameBySlug } from '../services/games';
 
 export async function gameLoader({ params }) {
-  const game = getGameByRoute(params.route);
+  const game = getGameBySlug(params.slug);
   return { game };
 }
 

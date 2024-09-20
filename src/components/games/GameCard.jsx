@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const GameCard = ({ game }) => {
   return (
-    <Link to={game.route}>
+    <Link to={game.slug}>
       <div className="card card-compact md:card-normal bg-base-100 shadow-xl hover:shadow-2xl m-4 max-w-96">
         <figure>
           <img

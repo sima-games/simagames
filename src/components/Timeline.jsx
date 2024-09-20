@@ -65,7 +65,7 @@ const Timeline = ({ data }) => {
       {/* Left navigation (scrollable) */}
       <nav
         ref={leftSideRef}
-        className="hidden w-1/4 h-screen overflow-y-auto sm:block border-r border-gray-300 sticky top-16"
+        className="hidden w-1/4 h-[calc(100vh-4rem)] overflow-y-auto sm:block border-r border-gray-300 sticky top-16"
       >
         <ul>
           {Object.keys(groupedData).map((year) => (
