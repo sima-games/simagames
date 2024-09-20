@@ -8,7 +8,7 @@ const HeroSection = () => {
       style={{
         backgroundImage: `url(${hero})`,
         backgroundSize: 'cover',
-        backgroundPosition: '0% 20%',
+        backgroundPosition: '100% 20%',
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
