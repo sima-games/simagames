@@ -4,20 +4,20 @@ import hero from '../assets/images/hero.jpg';
 const HeroSection = () => {
   return (
     <section
-      className="hero min-h-[calc(100vh-4rem)] flex justify-center items-center relative"
+      className="hero min-h-[calc(100vh-4rem)]"
       style={{
-        backgroundImage: hero,
+        backgroundImage: `url(${hero})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: '0% 20%',
       }}
     >
-      <div className="hero-overlay bg-opacity-60 absolute inset-0"></div>
-      <div className="text-neutral-content text-center relative z-10">
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md mx-auto">
           <h1 className="mb-5 text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
             Hello, world!
           </h1>
-          <p className="px-4 mb-5">
+          <p className="mb-5">
             Меня зовут Серафим. Разрабатываю игры, программирую, преподаю, веду
             YouTube, бегаю и еще много чего
           </p>
